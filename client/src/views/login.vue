@@ -34,18 +34,18 @@ export default {
         method: `post`,
         data: this.form
       })
-        .then((data) => {
-          localStorage.token = data.token
-          localStorage.id = data.id
-          localStorage.username = data.username
+        .then(({ data }) => {
+          localStorage.token = data.token;
+          localStorage.id = data.id;
+          localStorage.username = data.username;
 
           this.$router.push({ name: "main" });
         })
         .catch(err => {
-          this.$store.dispatch('makeToast', {
+          this.$store.dispatch("makeToast", {
             vm: this,
-            message: err.response.data.errors.join(', ')
-          })
+            message: err.response.data.errors.join(", ")
+          });
         });
     }
   }
