@@ -21,7 +21,12 @@ module.exports = (err, req, res, next) => {
             message = err.message
             errors = [err.message]
             break;
-    
+
+        case `BadRequestError`:
+            status = 400
+            message = err.message
+            errors = [err.message]
+            break;
     }
 
     status === 500 && console.log(err) && errors.push(`internal server error`)

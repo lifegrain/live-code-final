@@ -1,5 +1,6 @@
 const Model = require(`../models`)
 const jwt = require(`../helpers/jwt`)
+const createError = require(`http-errors`)
 
 class User {
     static login(req, res, next) {
@@ -12,13 +13,17 @@ class User {
             }
         })
             .then(data => {
-                var token = jwt.sign(data.id)
-
-                res.status(200).json({
-                    token,
-                    id: data.id,
-                    username: data.username
-                })
+                if(data) {
+                    var token = jwt.sign(data.id)
+    
+                    res.status(200).json({
+                        token,
+                        id: data.id,
+                        username: data.username
+                    })
+                } else {
+                    throw createError(400, `wrong email/password`)
+                }
             })
             .catch(next)
     }
