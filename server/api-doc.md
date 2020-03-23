@@ -19,8 +19,8 @@ List of available endpoints:
 
 ```json
 {
-  "errors": ["...", "..."],
-  "message": "..."
+	"errors": ["...", "..."],
+	"message": "..."
 }
 ```
 
@@ -32,8 +32,8 @@ Request:
 
 ```json
 {
-  "username": "string",
-  "password": "string"
+	"username": "string",
+	"password": "string"
 }
 ```
 
@@ -45,9 +45,9 @@ Response:
 
 ```json
 {
-  "token": "string",
-  "id": "integer",
-  "username": "string"
+	"token": "string",
+	"id": "integer",
+	"username": "string"
 }
 ```
 
@@ -66,12 +66,12 @@ Response:
 
 ```json
 [
-  {
-    "name": "string",
-    "cases": "integer",
-    "deaths": "integer",
-    "recovered": "integer"
-  }
+	{
+		"name": "string",
+		"cases": "integer",
+		"deaths": "integer",
+		"recovered": "integer"
+	}
 ]
 ```
 
@@ -93,14 +93,10 @@ Response:
   ​
 
 ```json
-[
-  {
-    "name": "string",
+[{
     "cases": "integer",
-    "deaths": "integer",
-    "recovered": "integer"
-  }
-]
+    "Country: ""
+}]
 ```
 
 ​
@@ -118,8 +114,8 @@ Request:
 
 ```json
 {
-  "report": "integer",
-  "CountryId": "integer"
+    "cases": "integer",
+    "CountryId": "integer"
 }
 ```
 
@@ -131,23 +127,23 @@ Request:
 
 ```json
 {
-  "report": {
-    "id": "integer",
-    "report": "integer",
-    "UserId": "integer",
-    "CountryId": "integer",
-    "createdAt": "2020-03-17T12:00:56.894Z",
-    "updatedAt": "2020-03-22T10:19:48.449Z",
-    "Country": {
-      "id": 89,
-      "name": "Afghanistan",
-      "deaths": 0,
-      "recovered": 1,
-      "cases": 20,
-      "createdAt": "2020-03-17T12:00:56.894Z",
-      "updatedAt": "2020-03-22T10:19:48.449Z"
-    }
-  }
+	"report": {
+		"id": "integer",
+		"report": "integer",
+		"UserId": "integer",
+		"CountryId": "integer",
+		"createdAt": "2020-03-17T12:00:56.894Z",
+		"updatedAt": "2020-03-22T10:19:48.449Z",
+		"Country": {
+			"id": 89,
+			"name": "Afghanistan",
+			"deaths": 0,
+			"recovered": 1,
+			"cases": 20,
+			"createdAt": "2020-03-17T12:00:56.894Z",
+			"updatedAt": "2020-03-22T10:19:48.449Z"
+		}
+	}
 }
 ```
 
@@ -171,15 +167,15 @@ Response:
 
 ```json
 {
-  "country": {
-    "id": 42,
-    "name": "Indonesia",
-    "deaths": 5,
-    "recovered": 8,
-    "cases": 117,
-    "createdAt": "2020-03-17T12:00:56.894Z",
-    "updatedAt": "2020-03-22T10:19:18.590Z"
-  },
-  "report": "Successfully delete"
+	"country": {
+		"id": 42,
+		"name": "Indonesia",
+		"deaths": 5,
+		"recovered": 8,
+		"cases": 117,
+		"createdAt": "2020-03-17T12:00:56.894Z",
+		"updatedAt": "2020-03-22T10:19:18.590Z"
+	},
+	"report": "Successfully delete"
 }
 ```
