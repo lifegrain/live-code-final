@@ -35,3 +35,6 @@ diperlukan, kamu boleh mengerjakan fitur tambahan ini pada halaman list Covid19:
 
 - Search filter countries wajib menggunakan debounce (boleh buatan atau pake lodash)
 - menggunakan transaction (SQL) pada saat report cases dan delete cases
+
+
+kembali setelah break

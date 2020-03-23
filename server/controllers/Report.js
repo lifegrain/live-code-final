@@ -75,7 +75,7 @@ class Report {
                 }
             })
             .then(data => {
-                Number(data.cases) -= Number(info.cases)
+                Number(data.cases) -= Number(info.cases)    
                 var country = data
 
                 res.status(200).json({
