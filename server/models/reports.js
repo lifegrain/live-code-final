@@ -7,8 +7,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Reports.associate = function(models) {
     // associations can be defined here
-    Reports.belongsTo(models.Country)
-    Reports.belongsTo(models.User)
+    Reports.belongsTo(models.Country, {foreignKey: 'CountryId', targetKey: 'id'})
+    Reports.belongsTo(models.User, {foreignKey: 'UserId', targetKey: 'id'})
   };
   return Reports;
 };
