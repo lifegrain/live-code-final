@@ -32,9 +32,7 @@ class Report {
                 return Model.Country.findByPk(CountryId)
             })
             .then(data => {
-                console.log(cases)
-
-                cases += Number(data.cases)
+                cases = Number(cases) + Number(data.cases)
 
                 Model.Country.update({
                     cases
@@ -49,6 +47,7 @@ class Report {
                 })
             })
             .then(data => {
+                data.Country.cases = cases
                 res.status(201).json(data)
             })
             .catch(next)
@@ -75,14 +74,23 @@ class Report {
                 }
             })
             .then(data => {
-                Number(data.cases) -= Number(info.cases)    
+                data.cases = Number(data.cases) - Number(info.cases)
                 var country = data
+
+                Model.Country.update({
+                    cases: data.cases
+                }, {
+                    where: {
+                        id: data.id
+                    }
+                })
 
                 res.status(200).json({
                     country,
                     report: `Successfully delete`
                 })
             })
+            .catch(next)
     }
 }
 

@@ -10,11 +10,21 @@ module.exports = (err, req, res, next) => {
             errors = [`invalid token`]
             break;
     
-        default:
+        case `ForbiddenError`:
+            status = 403
+            message = err.message
+            errors = [err.message]
             break;
+    
+        case `NotFoundError`:
+            status = 404
+            message = err.message
+            errors = [err.message]
+            break;
+    
     }
 
-    status === 500 && console.log(err) && errors.push(message)
+    status === 500 && console.log(err) && errors.push(`internal server error`)
 
     res.status(status).json({
         errors,
